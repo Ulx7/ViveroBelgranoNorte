@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --color-timber-wolf: #DBD8D0;
+  --color-sage-green: #7F8F6E;
+  --color-tobacco-brown: #6C593D;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Crimson Pro", serif;
+}
+
+body {
+  background-color: var(--color-timber-wolf);
+  color: var(--color-tobacco-brown);
+  font-family: var(--font-sans);
+}
+
+.bg-timber-wolf { background-color: var(--color-timber-wolf) !important; }
+.text-tobacco-brown { color: var(--color-tobacco-brown) !important; }
+.text-tobacco-brown\/60 { color: rgba(108, 89, 61, 0.6) !important; }
+.text-tobacco-brown\/80 { color: rgba(108, 89, 61, 0.8) !important; }
+.text-sage-green { color: var(--color-sage-green) !important; }
+.bg-sage-green { background-color: var(--color-sage-green) !important; }
+.bg-tobacco-brown { background-color: var(--color-tobacco-brown) !important; }
+.border-tobacco-brown\/20 { border-color: rgba(108, 89, 61, 0.2) !important; }
+.border-tobacco-brown { border-color: var(--color-tobacco-brown) !important; }
+.hover\:bg-tobacco-brown:hover { background-color: var(--color-tobacco-brown) !important; }
+.hover\:text-timber-wolf:hover { color: var(--color-timber-wolf) !important; }
+.hover\:text-sage-green:hover { color: var(--color-sage-green) !important; }
+.focus\:border-sage-green:focus { border-color: var(--color-sage-green) !important; }
+.group:hover .group-hover\:text-sage-green { color: var(--color-sage-green) !important; }
+.placeholder\:text-tobacco-brown\/40::placeholder { color: rgba(108, 89, 61, 0.4) !important; }
