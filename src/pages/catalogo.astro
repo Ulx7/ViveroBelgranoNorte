@@ -3,21 +3,30 @@ import Layout from '../layouts/Layout.astro';
 import CatalogoInteractivo from '../components/CatalogoInteractivo.jsx';
 import { client } from "../lib/sanity";
 
-// Traemos los datos desde el servidor (esto es veloz)
-const plantas = await client.fetch(`*[_type == "producto"]{
+const plantas = await client.fetch(`*[_type == "producto"] {
   nombre,
-  descripcion,
+  imagen,
   categoria,
-  imagen
+  sol,
+  riego,
+  ubicacion,
+  precio
 }`);
 
-const categorias = ["Todo", "Interior", "Exterior", "Aromáticas", "Huerta", "Tierra", "Frutales"];
+const categorias = [
+  "Todo",
+  "Interior",
+  "Exterior",
+  "Aromáticas",
+  "Huerta",
+  "Tierra",
+  "Frutales",
+  "Macetas"
+];
 ---
 
 <Layout title="Vivero Belgrano Norte - Catálogo">
   <div class="max-w-7xl mx-auto px-6 py-12">
-    {/* El atributo client:load es la clave: activa el JavaScript de React */}
-    {/* @ts-ignore */}
     <CatalogoInteractivo 
         client:load 
         plantasIniciales={plantas} 

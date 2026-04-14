@@ -14,6 +14,14 @@ body {
   font-family: var(--font-sans);
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .bg-timber-wolf { background-color: var(--color-timber-wolf) !important; }
 .text-tobacco-brown { color: var(--color-tobacco-brown) !important; }
 .text-tobacco-brown\/60 { color: rgba(108, 89, 61, 0.6) !important; }
