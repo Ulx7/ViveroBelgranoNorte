@@ -17,14 +17,12 @@ export default function InfoPlanta({ sol, riego, ubicacion }) {
 
   if (!sol && !riego && !ubicacion) return null;
 
-  // Definimos una clase base para todas las etiquetas para mantener la consistencia
   const estiloBase = "flex items-center gap-1.5 bg-white/60 px-2.5 py-1 rounded-full border border-[#6B5E4C]/10 shadow-sm";
   const estiloTexto = "text-[9px] font-black uppercase tracking-tighter text-[#6B5E4C]";
-  const estiloIcono = "opacity-50"; // Los iconos un poco más suaves para que no compitan
+  const estiloIcono = "opacity-50";
 
   return (
     <div className="flex flex-wrap gap-2 mt-3">
-      {/* Luz / Sol */}
       {sol && (
         <div className={estiloBase}>
           <Sun size={12} className={estiloIcono} />
@@ -34,7 +32,6 @@ export default function InfoPlanta({ sol, riego, ubicacion }) {
         </div>
       )}
 
-      {/* Agua / Riego */}
       {riego && (
         <div className={estiloBase}>
           <Droplets size={12} className={estiloIcono} />
@@ -44,7 +41,6 @@ export default function InfoPlanta({ sol, riego, ubicacion }) {
         </div>
       )}
 
-      {/* Ubicación */}
       {ubicacion && (
         <div className={estiloBase}>
           {ubicacion === 'interior' ? (

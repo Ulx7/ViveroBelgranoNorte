@@ -1,43 +1,45 @@
-# Astro Starter Kit: Minimal
+# Vivero Belgrano Norte
 
-```sh
-npm create astro@latest -- --template minimal
-```
+**Vivero Belgrano Norte** is a high-performance digital catalog developed to bridge the gap between traditional botany and modern editorial design. Built with a focus on **Visual Storytelling** and **Atomic Design**, this platform provides a seamless, high-end experience for discovering botanical species.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+# Architecture & Philosophy
 
-Inside of your Astro project, you'll see the following folders and files:
+The project was conceived under the "Design as a Service" philosophy, prioritizing clean aesthetics and technical efficiency. Every component was engineered to maintain a balance between a **minimalist, magazine-like interface** and a robust data structure.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Key Technical Pillars:
+* **Decoupled Architecture:** Using **Sanity CMS** as a headless backend allows for independent content scaling without affecting frontend logic.
+* **Optimized Rendering:** Leveraging **Astro’s Islands Architecture** to deliver zero-bundle-size HTML where possible, hydrating only the interactive catalog components via **React**.
+* **Design Tokens:** A custom-built color palette and typography system based on earth tones and premium glassmorphism.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Engineering Stack
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Layer | Technology |
+| **Frontend Framework** | Astro + React.js |
+| **Styling** | Tailwind CSS (JIT Engine) |
+| **Content Management** | Sanity.io (Headless CMS) |
+| **Iconography** | Lucide React |
+| **Deployment** | Vercel Edge Functions |
 
-Any static assets, like images, can be placed in the `public/` directory.
+# Core Functionalities
 
-## 🧞 Commands
+## Intelligent Filtering System
+A sophisticated filtering engine that allows users to segment the botanical collection by light exposure, watering frequency, and spatial location (Interior/Exterior).
 
-All commands are run from the root of the project, from a terminal:
+## Real-time Search
+Implemented with a client-side state management system to ensure instantaneous feedback as users type, providing a premium "search-as-you-type" experience.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Responsive Art Direction
+A mobile-first approach where the layout adapts its grid system and navigation patterns (Sticky Glassmorphism Nav) to maintain the editorial feel across all devices.
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# 🛠 Installation & Local Development
+
+1. **Environment Setup**
+   Clone the repository and install the dependencies:
+   ```bash
+   git clone [https://github.com/your-username/vivero-belgrano.git](https://github.com/your-username/vivero-belgrano.git)
+   cd vivero-belgrano
+   npm install

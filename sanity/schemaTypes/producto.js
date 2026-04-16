@@ -4,7 +4,6 @@ export default {
   title: 'Mis Plantas',
   fields: [
     { name: 'nombre', type: 'string', title: 'Nombre' },
-    { name: 'descripcion', type: 'string', title: 'Descripción' },
     {
       name: 'categoria',
       type: 'string',
