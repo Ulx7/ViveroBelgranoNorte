@@ -41,7 +41,7 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
 
     return (
         <div className="max-w-7xl mx-auto px-6 py-12">
-            
+
             <header className="w-full text-center mb-10 overflow-hidden px-4">
                 <span className="text-[10px] uppercase tracking-[0.4em] text-[#6B5E4C]/60 font-black block">Vivero Belgrano Norte</span>
                 <h1 className="text-[12vw] md:text-8xl font-black text-black tracking-tighter leading-[0.8] mt-2 whitespace-nowrap">
@@ -53,11 +53,10 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
             {/* NAV */}
             <div className="sticky top-4 z-50 bg-[#F4F1EA]/95 backdrop-blur-md px-4 md:px-8 py-4 rounded-[2.5rem] shadow-2xl shadow-[#6B5E4C]/10 border border-white/40 mb-16 transition-all duration-500">
                 <div className="flex flex-col gap-3">
-                    
+
                     {/* Redes sociales */}
-                    <div className={`flex items-center justify-between transition-all duration-500 overflow-hidden ${
-                        isScrolled ? 'max-h-0 opacity-0 pointer-events-none' : 'max-h-12 opacity-100'
-                    }`}>
+                    <div className={`flex items-center justify-between transition-all duration-500 overflow-hidden ${isScrolled ? 'max-h-0 opacity-0 pointer-events-none' : 'max-h-12 opacity-100'
+                        }`}>
                         <a href="/" className="flex items-center gap-2 group shrink-0">
                             <div className="w-9 h-9 bg-[#6B5E4C] rounded-full flex items-center justify-center text-[#F4F1EA] text-[10px] font-black">VB</div>
                             <span className="text-[10px] uppercase tracking-widest font-black text-[#6B5E4C]">Inicio</span>
@@ -85,11 +84,10 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                             <button
                                 key={cat}
                                 onClick={() => setCategoriaActiva(cat)}
-                                className={`px-4 py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase transition-all duration-300 ${
-                                    categoriaActiva === cat
+                                className={`px-4 py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase transition-all duration-300 ${categoriaActiva === cat
                                         ? "bg-[#6B5E4C] text-[#F4F1EA] shadow-md"
                                         : "text-[#6B5E4C]/50 bg-white/30 hover:bg-white/60"
-                                }`}
+                                    }`}
                             >
                                 {cat}
                             </button>
@@ -97,7 +95,7 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                     </nav>
                 </div>
             </div>
-            
+
             <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16 min-h-[50vh]">
                 {plantasFiltradas.length > 0 ? (
                     plantasFiltradas.map((planta, index) => (
@@ -131,12 +129,24 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                                             <span className="text-[10px] font-medium text-[#6B5E4C]/50 leading-none">Unidad</span>
                                         </div>
 
-                                        {planta.precio && (
-                                            <div className="flex items-end gap-0.5 leading-none">
-                                                <span className="text-sm font-bold text-[#6B5E4C]/40 tracking-tighter mb-1">$</span>
-                                                <span className="text-4xl font-black text-[#6B5E4C] tracking-tighter leading-[0.8]">{planta.precio}</span>
-                                            </div>
-                                        )}
+                                        {/* Lógica de Precio vs Consultar */}
+                                        <div className="flex items-end justify-end leading-none">
+                                            {planta.precio ? (
+                                                <div className="flex items-end gap-0.5 leading-none">
+                                                    <span className="text-sm font-bold text-[#6B5E4C]/40 tracking-tighter mb-1">$</span>
+                                                    <span className="text-4xl font-black text-[#6B5E4C] tracking-tighter leading-[0.8]">{planta.precio}</span>
+                                                </div>
+                                            ) : (
+                                                <a
+                                                    href={`https://wa.me/+59891951434?text=${encodeURIComponent(`Hola! Quería consultar el precio de la planta: ${planta.nombre}`)}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-[10px] font-black uppercase tracking-wider text-[#8A9A5B] bg-[#8A9A5B]/10 hover:bg-[#8A9A5B] hover:text-white px-3 py-1.5 rounded-full transition-all duration-300 border border-[#8A9A5B]/20 shrink-0"
+                                                >
+                                                    Consultar
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="border-t-2 border-[#6B5E4C]/20 mx-1"></div>
                                 </div>
