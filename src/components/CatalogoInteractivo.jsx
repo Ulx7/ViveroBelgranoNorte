@@ -4,19 +4,15 @@ import InfoPlanta from './InfoPlanta';
 
 const RedesSociales = ({ compacto }) => (
     <div className={`flex items-center gap-3 bg-white/40 px-3 py-1.5 rounded-full border border-white/20 transition-all duration-500 ${compacto ? 'opacity-0 scale-90 pointer-events-none w-0 p-0 overflow-hidden' : 'opacity-100 scale-100'}`}>
-        {/* WhatsApp */}
         <a href="https://wa.me/+59891951434" target="_blank" className="text-[#6B5E4C] hover:text-[#25D366] transition-colors shrink-0">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-12.7 8.38 8.38 0 0 1 3.8.9L22 2l-1.5 5.5Z" /></svg>
         </a>
-        {/* Instagram */}
         <a href="https://www.instagram.com/viverobelgranonorte" target="_blank" className="text-[#6B5E4C] hover:text-[#8A9A5B] transition-colors shrink-0">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.51" /></svg>
         </a>
-        {/* TikTok */}
         <a href="https://www.tiktok.com/@viverobelgranonorte" target="_blank" className="text-[#6B5E4C] hover:text-[#8A9A5B] transition-colors shrink-0 opacity-60">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" /></svg>
         </a>
-        {/* Facebook */}
         <a href="https://www.facebook.com/share/1CZkVvrWnR/" target="_blank" className="text-[#6B5E4C] hover:text-[#1877F2] transition-colors shrink-0 opacity-60">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
         </a>
@@ -28,7 +24,7 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
     const [categoriaActiva, setCategoriaActiva] = useState("Todo");
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // Lógica para detectar el scroll
+    // Logica del scroll
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 150);
@@ -46,23 +42,22 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
     return (
         <div className="max-w-7xl mx-auto px-6 py-12">
             
-            {/* HEADER - Ajustado para que no se rompa */}
             <header className="w-full text-center mb-10 overflow-hidden px-4">
                 <span className="text-[10px] uppercase tracking-[0.4em] text-[#6B5E4C]/60 font-black block">Vivero Belgrano Norte</span>
-                {/* 'text-clamp' manual: 12vw para móvil, 8xl para desktop */}
                 <h1 className="text-[12vw] md:text-8xl font-black text-black tracking-tighter leading-[0.8] mt-2 whitespace-nowrap">
                     CATÁLOGO
                 </h1>
                 <p className="text-lg md:text-xl italic text-[#6B5E4C]/60 mt-4 font-light tracking-tight">Nuestra Selección de Vida</p>
             </header>
 
-            {/* NAV DINÁMICO */}
-            <div className={`sticky top-4 z-50 bg-[#F4F1EA]/95 backdrop-blur-md px-4 md:px-8 py-4 rounded-[2.5rem] shadow-2xl shadow-[#6B5E4C]/10 border border-white/40 mb-16 transition-all duration-500`}>
-                <div className="flex flex-col gap-4">
+            {/* NAV */}
+            <div className="sticky top-4 z-50 bg-[#F4F1EA]/95 backdrop-blur-md px-4 md:px-8 py-4 rounded-[2.5rem] shadow-2xl shadow-[#6B5E4C]/10 border border-white/40 mb-16 transition-all duration-500">
+                <div className="flex flex-col gap-3">
                     
-                    {/* Fila 1: Logo e Inicio (Izquierda) + Redes (Derecha) */}
-                    {/* Esta fila desaparece al scrollear */}
-                    <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-0 opacity-0 overflow-hidden mb-[-1rem]' : 'h-10 opacity-100 mb-0'}`}>
+                    {/* Redes sociales */}
+                    <div className={`flex items-center justify-between transition-all duration-500 overflow-hidden ${
+                        isScrolled ? 'max-h-0 opacity-0 pointer-events-none' : 'max-h-12 opacity-100'
+                    }`}>
                         <a href="/" className="flex items-center gap-2 group shrink-0">
                             <div className="w-9 h-9 bg-[#6B5E4C] rounded-full flex items-center justify-center text-[#F4F1EA] text-[10px] font-black">VB</div>
                             <span className="text-[10px] uppercase tracking-widest font-black text-[#6B5E4C]">Inicio</span>
@@ -70,7 +65,7 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                         <RedesSociales compacto={isScrolled} />
                     </div>
 
-                    {/* Fila 2: Buscador */}
+                    {/* Buscador */}
                     <div className="w-full flex justify-center transition-all duration-500">
                         <div className={`relative transition-all duration-500 ${isScrolled ? 'w-full max-w-md' : 'w-full'}`}>
                             <input
@@ -84,7 +79,7 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                         </div>
                     </div>
 
-                    {/* Fila 3: Categorías */}
+                    {/* Categorias */}
                     <nav className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pb-1">
                         {categorias.map((cat) => (
                             <button
@@ -103,8 +98,7 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                 </div>
             </div>
             
-            {/* Plants */}
-            <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
+            <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16 min-h-[50vh]">
                 {plantasFiltradas.length > 0 ? (
                     plantasFiltradas.map((planta, index) => (
                         <div key={index} className="group cursor-pointer flex flex-col h-full">
@@ -150,8 +144,8 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                         </div>
                     ))
                 ) : (
-                    <div className="col-span-full py-24 text-center">
-                        <p className="text-[#6B5E4C]/30 italic text-lg tracking-tight">No encontramos esa planta en nuestro jardín...</p>
+                    <div className="col-span-full py-24 flex items-center justify-center text-center">
+                        <p className="text-[#6B5E4C]/40 italic text-lg tracking-tight">No encontramos esa planta en nuestro jardín...</p>
                     </div>
                 )}
             </main>
