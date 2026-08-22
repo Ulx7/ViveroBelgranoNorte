@@ -129,7 +129,6 @@ export default function CatalogoInteractivo({ plantasIniciales, categorias }) {
                                             <span className="text-[10px] font-medium text-[#6B5E4C]/50 leading-none">Unidad</span>
                                         </div>
 
-                                        {/* Lógica de Precio vs Consultar */}
                                         <div className="flex items-end justify-end leading-none">
                                             {planta.precio ? (
                                                 <div className="flex items-end gap-0.5 leading-none">
